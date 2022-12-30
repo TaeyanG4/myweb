@@ -6,7 +6,6 @@ import re
 import pickle
 import json
 
-from xgboost import XGBRegressor
 from category_encoders import OrdinalEncoder
 
 from flask import Flask, render_template, request, jsonify
