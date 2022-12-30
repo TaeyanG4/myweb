@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <title>
+        Predict Osu! Standard mode playcounts
+    </title>
+</head>
+
+<body>
+    <h1>
+        Predict Osu! Standard mode playcounts {{ output }}
+        <form method="post" action="/result">
+            <label for="total_length">song length (노래 길이)</label>
+            <input type="text" id="total_length" name="total_length"><br>
+
+            <label for="hit_length">play length (플레이 길이)</label>
+            <input type="text" id="hit_length" name="hit_length"><br>
+
+            <label for="diff_size">CS</label>
+            <input type="text" id="diff_size" name="diff_size"><br>
+
+            <label for="diff_overall">OD</label>
+            <input type="text" id="diff_overall" name="diff_overall"><br>
+
+            <label for="diff_approach">AR</label>
+            <input type="text" id="diff_approach" name="diff_approach"><br>
+
+            <label for="diff_drain">HP</label>
+            <input type="text" id="diff_drain" name="diff_drain"><br>
+
+            <label for="count_normal">circle counts (서클 갯수)</label>
+            <input type="text" id="count_normal" name="count_normal"><br>
+
+            <label for="count_slider">slider counts (슬라이더 갯수)</label>
+            <input type="text" id="count_slider" name="count_slider"><br>
+
+            <label for="count_spinner">spinner counts (스피너 갯수)</label>
+            <input type="text" id="count_spinner" name="count_spinner"><br>
+
+            <label for="artist">Artist</label>
+            <input type="text" id="artist" name="artist"><br>
+
+            <label for="title">Title (제목)</label>
+            <input type="text" id="title" name="title"><br>
+
+            <label for="creator" class="form-label">Map host (맵셋 주인)</label>
+            <input type="text" id="creator" name="creator"><br>
+
+            <label for="creator_id" class="form-label">Map host's userID (맵셋 주인의 userID)</label>
+            <input type="text" id="creator_id" name="creator_id"><br>
+
+            <label for="bpm" class="form-label">bpm</label>
+            <input type="text" id="bpm" name="bpm"><br>
+
+            <label for="source" class="form-label">source (출처)</label>
+            <input type="text" id="source" name="source"><br>
+
+            <label for="genre_id" class="form-label">genre (장르)</label>
+            <input type="text" id="genre_id" name="genre_id"><br>
+
+            <label for="language_id" class="form-label">language (언어)</label>
+            <input type="text" id="language_id" name="language_id"><br>
+
+            <label for="storyboard" class="form-label">storyboard (스토리보드)</label>
+            <input type="text" id="storyboard" name="storyboard"><br>
+
+            <label for="video" class="form-label">video (비디오)</label>
+            <input type="text" id="video" name="video"><br>
+
+            <label for="max_combo" class="form-label">max combo (최대 콤보)</label>
+            <input type="text" id="max_combo" name="max_combo"><br>
+
+            <label for="difficultyrating" class="form-label">Star Rating (스타레이팅)</label>
+            <input type="text" id="difficultyrating" name="difficultyrating"><br>
+
+            <label for="work_time" class="form-label">work period (제작 기간)</label>
+            <input type="text" id="work_time" name="work_time"><br>
+
+            <label for="mapper" class="form-label">mapper (매퍼)</label>
+            <input type="text" id="mapper" name="mapper"><br>
+
+            <label for="beatmap_count" class="form-label">Beatmap count (비트맵셋에 들어가 있는 총 비트맵 수)</label>
+            <input type="text" id="beatmap_count" name="beatmap_count"><br>
+
+            <label for="after_ranked" class="form-label">몇일뒤 플레이카운트을 보시겠습니까?</label>
+            <input type="text" id="after_ranked" name="after_ranked"><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        
+    </h1>
+</body>
+
+</html>
