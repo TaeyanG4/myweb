@@ -77,9 +77,11 @@ def index(data=None):
         'source', 'genre_id', 'language_id', 'storyboard', 'video', 'max_combo',
         'difficultyrating', 'after_ranked', 'work_time', 'mapper',
         'beatmap_count']] # 컬럼 순서변경
+    try:
+        input_data = encoding(data) # 데이터 전처리 과정
+    except:    # 예외가 발생했을 때 실행됨
+        return '예외가 발생했습니다. 데이터를 입력해주세요'
     
-    input_data = encoding(data) # 데이터 전처리 과정
-
     with open('model.pkl', 'rb') as pickle_file:
         model = pickle.load(pickle_file)  # 모델 불러오기
     y_pred = model.predict(input_data)  # 예측값 생성

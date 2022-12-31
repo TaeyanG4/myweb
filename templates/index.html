@@ -2,103 +2,294 @@
 <html>
 
 <head>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <title>
         Predict Osu! Standard mode playcounts
     </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <h1>
-        Predict Osu! Standard mode playcounts {{ output }}
-        <form method="post" action="/result">
-            <label for="total_length">song length (노래 길이)</label>
-            <input type="text" id="total_length" name="total_length"><br>
 
-            <label for="hit_length">play length (플레이 길이)</label>
-            <input type="text" id="hit_length" name="hit_length"><br>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
 
-            <label for="diff_size">CS</label>
-            <input type="text" id="diff_size" name="diff_size"><br>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="index.html" class="active">HERE</a></li>
+                            <li><a href="browse.html">IS</a></li>
+                            <li><a href="details.html">W.I.P</a></li>
+                            <li><a href="streams.html">Section</a></li>
+                            <li><a href="profile.html">Don't touch :3</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-            <label for="diff_overall">OD</label>
-            <input type="text" id="diff_overall" name="diff_overall"><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-content">
 
-            <label for="diff_approach">AR</label>
-            <input type="text" id="diff_approach" name="diff_approach"><br>
+                    <!-- ***** Banner Start ***** -->
+                    <div class="main-banner">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="header-text">
+                                    <h6>Welcome To Osu! Predict Shop</h6>
+                                    <h4><em>Osu! </em>Standard mode predict playcounts</h4>
+                                    <h5>Predict your new beatmap's playcounts!</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ***** Banner End ***** -->
 
-            <label for="diff_drain">HP</label>
-            <input type="text" id="diff_drain" name="diff_drain"><br>
+                    <!-- ***** From Start ***** -->
+                    <div class="most-popular">
 
-            <label for="count_normal">circle counts (서클 갯수)</label>
-            <input type="text" id="count_normal" name="count_normal"><br>
+                        <form class="ui-form" method="post" action="/result" autocomplete="off">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="heading-section">
+                                        <h4>input your beatmap info</h4>
+                                    </div>
+                                    <div class="row">
 
-            <label for="count_slider">slider counts (슬라이더 갯수)</label>
-            <input type="text" id="count_slider" name="count_slider"><br>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <label for="diff_size">
+                                                    <h4>- CS -</h4>
+                                                </label>
+                                                <input type="text" id="diff_size" name="diff_size"><br>
 
-            <label for="count_spinner">spinner counts (스피너 갯수)</label>
-            <input type="text" id="count_spinner" name="count_spinner"><br>
+                                                <label for="diff_overall">
+                                                    <h4>- OD -</h4>
+                                                </label>
+                                                <input type="text" id="diff_overall" name="diff_overall"><br>
 
-            <label for="artist">Artist</label>
-            <input type="text" id="artist" name="artist"><br>
+                                                <label for="diff_approach">
+                                                    <h4>- AR -</h4>
+                                                </label>
+                                                <input type="text" id="diff_approach" name="diff_approach"><br>
 
-            <label for="title">Title (제목)</label>
-            <input type="text" id="title" name="title"><br>
+                                                <label for="diff_drain">
+                                                    <h4>- HP -</h4>
+                                                </label>
+                                                <input type="text" id="diff_drain" name="diff_drain"><br>
+                                            </div>
+                                        </div>
 
-            <label for="creator" class="form-label">Map host (맵셋 주인)</label>
-            <input type="text" id="creator" name="creator"><br>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <label for="count_normal">
+                                                    <h4>Circle counts (서클 갯수)</h4>
+                                                </label>
+                                                <input type="text" id="count_normal" name="count_normal"><br>
 
-            <label for="creator_id" class="form-label">Map host's userID (맵셋 주인의 userID)</label>
-            <input type="text" id="creator_id" name="creator_id"><br>
+                                                <label for="count_slider">
+                                                    <h4>Slider counts (슬라이더 갯수)</h4>
+                                                </label>
+                                                <input type="text" id="count_slider" name="count_slider"><br>
 
-            <label for="bpm" class="form-label">bpm</label>
-            <input type="text" id="bpm" name="bpm"><br>
+                                                <label for="count_spinner">
+                                                    <h4>Spinner counts (스피너 갯수)</h4>
+                                                </label>
+                                                <input type="text" id="count_spinner" name="count_spinner"><br>
 
-            <label for="source" class="form-label">source (출처)</label>
-            <input type="text" id="source" name="source"><br>
+                                                <label for="max_combo">
+                                                    <h4>Max combo (최대 콤보)</h4>
+                                                </label>
+                                                <input type="text" id="max_combo" name="max_combo"><br>
+                                            </div>
+                                        </div>
 
-            <label for="genre_id" class="form-label">genre (장르)</label>
-            <input type="text" id="genre_id" name="genre_id"><br>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <label for="bpm">
+                                                    <h4>- BPM -</h4>
+                                                </label>
+                                                <input type="text" id="bpm" name="bpm"><br>
 
-            <label for="language_id" class="form-label">language (언어)</label>
-            <input type="text" id="language_id" name="language_id"><br>
+                                                <label for="difficultyrating">
+                                                    <h4>Star rating (스타레이팅)</h4>
+                                                </label>
+                                                <input type="text" id="difficultyrating" name="difficultyrating"><br>
 
-            <label for="storyboard" class="form-label">storyboard (스토리보드)</label>
-            <input type="text" id="storyboard" name="storyboard"><br>
+                                                <label for="total_length">
+                                                    <h4>Song length (노래 길이)</h4>
+                                                </label>
+                                                <input type="text" id="total_length" name="total_length"><br>
 
-            <label for="video" class="form-label">video (비디오)</label>
-            <input type="text" id="video" name="video"><br>
+                                                <label for="hit_length">
+                                                    <h4>Play length (플레이 길이)</h4>
+                                                </label>
+                                                <input type="text" id="hit_length" name="hit_length"><br>
 
-            <label for="max_combo" class="form-label">max combo (최대 콤보)</label>
-            <input type="text" id="max_combo" name="max_combo"><br>
+                                            </div>
+                                        </div>
 
-            <label for="difficultyrating" class="form-label">Star Rating (스타레이팅)</label>
-            <input type="text" id="difficultyrating" name="difficultyrating"><br>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <label for="creator">
+                                                    <h4>Map host (맵셋 주인)</h4>
+                                                </label>
+                                                <input type="text" id="creator" name="creator"><br>
 
-            <label for="work_time" class="form-label">work period (제작 기간)</label>
-            <input type="text" id="work_time" name="work_time"><br>
+                                                <label for="creator_id">
+                                                    <h4>Map host's userID</h4>
+                                                </label>
+                                                <input type="text" id="creator_id" name="creator_id"><br>
 
-            <label for="mapper" class="form-label">mapper (매퍼)</label>
-            <input type="text" id="mapper" name="mapper"><br>
+                                                <label for="mapper">
+                                                    <h4>Mapper</h4>
+                                                </label>
+                                                <input type="text" id="mapper" name="mapper"><br>
 
-            <label for="beatmap_count" class="form-label">Beatmap count (비트맵셋에 들어가 있는 총 비트맵 수)</label>
-            <input type="text" id="beatmap_count" name="beatmap_count"><br>
+                                                <label for="beatmap_count">
+                                                    <h4>Beatmap counts <br>(비트맵셋의 맵의 갯수)</h4>
+                                                </label>
+                                                <input type="text" id="beatmap_count" name="beatmap_count"><br>
+                                            </div>
+                                        </div>
 
-            <label for="after_ranked" class="form-label">몇일뒤 플레이카운트을 보시겠습니까?</label>
-            <input type="text" id="after_ranked" name="after_ranked"><br>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <label for="artist">
+                                                    <h4>Artist</h4>
+                                                </label>
+                                                <input type="text" id="artist" name="artist"><br>
 
-            <input type="submit" value="Submit">
-        </form>
+                                                <label for="title">
+                                                    <h4>Title</h4>
+                                                </label>
+                                                <input type="text" id="title" name="title"><br>
+
+                                                <label for="source">
+                                                    <h4>Source (출처)</h4>
+                                                </label>
+                                                <input type="text" id="source" name="source"><br>
+
+                                                <label for="work_time">
+                                                    <h4>Work period (제작 기간)</h4>
+                                                </label>
+                                                <input type="text" id="work_time" name="work_time"><br>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <label for="storyboard">
+                                                    <h4>Storyboard (스토리보드)</h4>
+                                                </label>
+                                                <input type="text" id="storyboard" name="storyboard"><br>
+                                                <!-- <input type="checkbox" id="storyboard" name="storyboard1" value="0">
+                                                <input type="checkbox" id="storyboard" name="storyboard2" value="1"> -->
+
+                                                <label for="video">
+                                                    <h4>Video (비디오)</h4>
+                                                </label>
+                                                <input type="text" id="video" name="video"><br>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <label for="genre_id">
+                                                    <h4>Genre (장르)</h4>
+                                                </label>
+                                                <input type="text" id="genre_id" name="genre_id"><br>
         
-    </h1>
+                                                <label for="language_id">
+                                                    <h4>Language (언어)</h4>
+                                                </label>
+                                                <input type="text" id="language_id" name="language_id"><br>
+                                            </div>
+                                        </div>
+
+                                        <label for="after_ranked">
+                                            <h4>몇일뒤 플레이카운트을 보시겠습니까?</h4>
+                                            <h4>How many days later do you want to see the play count?</h4>
+                                        </label><br>
+
+                                        <input type="text" id="after_ranked" name="after_ranked"><br>
+                                        <input type="submit" value="Submit">
+                                            
+                                            
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Form End ***** -->
+    </div>
+    </div>
+    </div>
+    </div>
+    <main class="contents">
+        <div id="container">
+
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p><a href="#">AI Bootcamp Section3 project</a>
+                        <br><a href="https://templatemo.com" target="_blank" title="free CSS templates">made by
+                            Taeyang</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>
