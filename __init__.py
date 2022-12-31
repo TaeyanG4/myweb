@@ -13,7 +13,7 @@ import os
 
 app = Flask(__name__)
 host_addr = "0.0.0.0"
-host_port = 5000
+host_port = 80
 
 # 슬라 서클 비율
 def slider_circle_rate(data):
